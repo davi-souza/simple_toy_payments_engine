@@ -41,7 +41,11 @@ It will process the `transactions.csv` file and generate an `accounts.csv` file 
 To run in the docker containter, you can run the following command
 
 ```bash
-docker run -it --rm -v $(pwd):/project -w /project --name project rust:1.55.0-slim-bullseye cargo run -q -- transactions.csv > accounts.csv
+docker run -it --rm \
+    -v $(pwd):/project \
+    -w /project --name project \
+    rust:1.55.0-slim-bullseye \
+    cargo run -q -- transactions.csv > accounts.csv
 ```
 
 And it will also generate an `accounts.csv` file with the results of the processing.
